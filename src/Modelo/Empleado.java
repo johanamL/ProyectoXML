@@ -9,6 +9,8 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedList;
+import org.jdom2.Document;
+import org.jdom2.Element;
 
 /**
  *
@@ -98,5 +100,22 @@ public class Empleado extends Persona {
         return g;
 
     }
+
+    public boolean crearFileXML(LinkedList<Empleado> listaEmpleados) {
+        try {
+            
+            Element company = new Element("company");
+            Document doc = new Document(company);
+            
+            for (int i = 0; i < listaEmpleados.size(); i++) {
+                
+            Element empleado = new Element("empleado");
+            empleado.addContent(new Element("nombre").setText(listaEmpleados.get(i).getNombre()));
+            empleado.addContent(new Element("direccion").setText(listaEmpleados.get(i).getDireccion()));
+            
+            }
+        }
+    }
+    
 
 }

@@ -50,7 +50,7 @@
             <Font name="Century Gothic" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="317.0" layoutY="433.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="184.0" text="Guardar Archivo XML">
+      <Button layoutX="317.0" layoutY="433.0" mnemonicParsing="false" onAction="#crearArchivoXML" prefHeight="52.0" prefWidth="184.0" text="Guardar Archivo XML">
          <font>
             <Font name="Century Gothic" size="15.0" />
          </font>

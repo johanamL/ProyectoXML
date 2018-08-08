@@ -72,6 +72,12 @@ public class FXMLDocumentController implements Initializable {
         
         JOptionPane.showMessageDialog(null, "Se agregó un empleado");
         
+    }
+    
+    @FXML
+    private void crearArchivoXML(ActionEvent event) {
+        Empleado objE = new Empleado();
+        boolean guardar = objE.crearFileXML(listaEmpleados);
         
         
     }
