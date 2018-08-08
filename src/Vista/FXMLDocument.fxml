@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectoxml.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="535.0" prefWidth="599.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="proyectoxml.FXMLDocumentController">
     <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <Label fx:id="ltitulo" layoutX="150.0" layoutY="25.0" text="Agregar Empleados" textFill="#714d80">
+         <font>
+            <Font name="Century Gothic" size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="lnombre" layoutX="60.0" layoutY="126.0" text="Nombre">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="ldir" layoutX="60.0" layoutY="170.0" text="Dirección">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="ledad" layoutX="61.0" layoutY="217.0" text="Edad">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lcodigo" layoutX="60.0" layoutY="262.0" text="Código Empleado">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="ldepto" layoutX="61.0" layoutY="307.0" text="Departamento">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tnombre" layoutX="242.0" layoutY="122.0" prefHeight="31.0" prefWidth="299.0" />
+      <TextField fx:id="tdir" layoutX="242.0" layoutY="166.0" prefHeight="31.0" prefWidth="299.0" />
+      <TextField fx:id="tedad" layoutX="242.0" layoutY="213.0" prefHeight="31.0" prefWidth="299.0" />
+      <TextField fx:id="tcodigo" layoutX="242.0" layoutY="258.0" prefHeight="31.0" prefWidth="299.0" />
+      <TextField fx:id="tdepto" layoutX="242.0" layoutY="303.0" prefHeight="31.0" prefWidth="299.0" />
+      <Button layoutX="106.0" layoutY="433.0" mnemonicParsing="false" onAction="#agregarEmpleadoLista" prefHeight="52.0" prefWidth="162.0" text="Agregar a la Lista">
+         <font>
+            <Font name="Century Gothic" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="317.0" layoutY="433.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="184.0" text="Guardar Archivo XML">
+         <font>
+            <Font name="Century Gothic" size="15.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>
