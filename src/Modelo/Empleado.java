@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.util.LinkedList;
 import org.jdom2.Document;
 import org.jdom2.Element;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
 
 /**
  *
@@ -102,20 +104,40 @@ public class Empleado extends Persona {
     }
 
     public boolean crearFileXML(LinkedList<Empleado> listaEmpleados) {
+        
+        boolean g = false;
+        
         try {
             
             Element company = new Element("company");
             Document doc = new Document(company);
             
+            
             for (int i = 0; i < listaEmpleados.size(); i++) {
                 
             Element empleado = new Element("empleado");
-            empleado.addContent(new Element("nombre").setText(listaEmpleados.get(i).getNombre()));
-            empleado.addContent(new Element("direccion").setText(listaEmpleados.get(i).getDireccion()));
+            empleado.addContent(new Element("Nombre").setText(listaEmpleados.get(i).getNombre()));
+            empleado.addContent(new Element("Dirección").setText(listaEmpleados.get(i).getDireccion()));
+            empleado.addContent(new Element("Edad").setText(String.valueOf(listaEmpleados.get(i).getEdad())));
+            empleado.addContent(new Element("Código").setText(listaEmpleados.get(i).getCodigoEmpleado()));
+            empleado.addContent(new Element("Departamento").setText(listaEmpleados.get(i).getDepartamento()));
             
+            
+            doc.getRootElement().addContent(empleado);
             }
+            
+            XMLOutputter xmlOutput = new XMLOutputter();
+            xmlOutput.setFormat(Format.getPrettyFormat());
+            xmlOutput.output(doc, new FileWriter("company"));
+            g = true;
+        
+        }catch (IOException io) {
+            
+            System.out.println(io.getMessage());
+            g = false;
         }
+        
+        return g;
     }
-    
 
 }
